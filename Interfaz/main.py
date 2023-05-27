@@ -91,5 +91,5 @@ b_4.grid(row=10, column=1, padx=2, pady=8, sticky="w")
 b_4.set(" m ")
 
 
-#   Loop principal de la Ventana    #
+##   Loop principal de la Ventana    ##
 main_window.mainloop()
