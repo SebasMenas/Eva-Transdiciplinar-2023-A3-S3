@@ -71,36 +71,43 @@ plot_buttons.grid(row=1, column=1, padx=20, pady=10)
 
 lienzo = None
 
+
+camino = False
 def generate_plot():
+    print("dentro")
     # Parámetros de la caída libre
-    g = 9.8  # Aceleración debido a la gravedad en m/s^2
-    t = np.linspace(0, 2, 100)  # Tiempo en segundos
-    h = 0.5 * g * t**2  # Altura en metros (fórmula de la caída libre)
-
+    #g = 9.8  # Aceleración debido a la gravedad en m/s^2
+    #t = np.linspace(0, 5, 100)  # Tiempo en segundos
+    #h = 10+t+0.5 * g * t**2  # Altura en metros (fórmula de la caída libre)
     # Configuración de estilo con Seaborn
-    sns.set(style="darkgrid")
 
+    altura = [10,8,6,4,2]
+    tiempo = [0,1,2,3,4]
+    sns.set(style="darkgrid")
     # Creación del gráfico
     fig, ax = plt.subplots()
-    ax.plot(t, h, label="Altura")
+    ax.plot(altura, tiempo, label="Altura")
     ax.set_xlabel("Tiempo (s)")
-    ax.set_ylabel("Altura (m)")
+    ax.set_ylabel("Posicion (m)")
     ax.set_title("Caída libre de un objeto")
     ax.legend()
-
     return fig
+
+
+def grafica():
+    fig = generate_plot()
+    print(fig)
+    lienzo = FigureCanvasTkAgg(fig, master=graphic_frame)
+    lienzo.draw()
+    lienzo.get_tk_widget().pack()
+    toolbar = NavigationToolbar2Tk(lienzo, window=plot_buttons)
+    toolbar.update()
+    toolbar.pack()
+    toolbar.pack_forget()
+    #return fig
+
+
 # Crear un lienzo de Matplotlib para Tkinter
-
-fig = generate_plot() 
-lienzo = FigureCanvasTkAgg(fig, master=graphic_frame)
-lienzo.draw()
-lienzo.get_tk_widget().pack()
-
-# Crear una barra de navegación para el lienzo
-toolbar = NavigationToolbar2Tk(lienzo, )
-toolbar.update()
-toolbar.pack()
-toolbar.pack_forget()
 
 # Resto del código...
 
@@ -187,7 +194,7 @@ b_4.grid(row=10, column=1, padx=2, pady=8, sticky="w")
 b_4.set(" m ")
 
 #Ocupan filas 12;13
-b_5 = ctk.CTkButton(buttons_frame, width=5, height=15, text="Calcular", font=ctk.CTkFont(size=12, weight="bold"))
+b_5 = ctk.CTkButton(buttons_frame, width=5, height=15, text="Calcular", font=ctk.CTkFont(size=12, weight="bold"),command=grafica)
 b_5.grid(column=0, columnspan=2, rowspan=2, row=12, padx=16, sticky='ew')
 
 
