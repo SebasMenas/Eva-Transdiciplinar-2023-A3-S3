@@ -1,8 +1,5 @@
 import math
 
-
-
-
 def caida_libre(altura):
     altura_lista = []
     tiempo_lista = []
@@ -15,14 +12,13 @@ def caida_libre(altura):
         posicion = altura - 4.9*tiempo_lista[index]**2
         altura_lista.append(posicion)
 
-        if contador_decimal >= tiempo_final:
+        if contador_decimal >= tiempo_final-0.01:
             break
 
         contador_decimal += 0.01
         index += 1
 
 
-    print(altura_lista)
-    print(tiempo_lista)
+    return tiempo_lista,altura_lista
 
-caida_libre(25)
+
