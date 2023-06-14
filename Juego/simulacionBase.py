@@ -25,7 +25,7 @@ def obj_fall(PosInicial,tiempodereproduccion):
             _V  = 0                        #la velocidad es 0 para
             panta.moveto(ball, 70, _y-40)  #dibujar que cayo al suelo  
             _on = False                    #terminar while
-        time.sleep(VPS)                    #tiempo en que reproduce todo
+        time.sleep(tiempodereproduccion)   #tiempo en que reproduce todo
         tk.update()                        
             
 obj_fall(600,0.0375)
