@@ -6,9 +6,11 @@ Este proyecto contiene el código fuente de un software que simula un evento de 
 
 ## Evento físico a simular: Caída libre
 
-### Historia
+###  Historia
 
-En este proyecto se simula un evento de caída libre, el cual tiene una historia interesante. En el año 384 o 322 a.C., el filósofo Aristóteles afirmaba que la velocidad a la que caen los objetos es proporcional a su peso. Sin embargo, en el año 55 a.C., un filósofo y poeta romano llamado Lucrecio estableció la existencia de la resistencia aerodinámica, la cual hace que los objetos caigan con menos fuerza. Además, Lucrecio afirmó que todos los objetos caen a la misma velocidad si están en el vacío.
+En este proyecto se simula un evento de caída libre, el cual tiene una historia interesante. Según se dice, desde la plataforma superior de la torre de Pisa, Galileo Galilei (1564-1642) dejó caer simultáneamente dos esferas: una pesada de hierro, y otra más ligera, de madera. A pesar de la gran diferencia de peso, ambas esferas caían juntas y llegaban al suelo en el mismo instante. Las velocidades de ambas aumentaban conforme caían, pero siempre se mantenían iguales entre sí; es decir, en su caída se aceleraban de igual manera. Y ocurriría igual con cuerpos más ligeros (una hoja de árbol, por ejemplo), si en esos casos no interviniese la resistencia del aire. sin contar que el que al principio que genero esta teoria fue el filosofo griego aristoteles (348-322 a C)
+
+Aristóteles formuló su teoría de los objetos en caída libre, suponiendo que todos se componen de cuatro elementos: tierra, aire, fuego y agua. Los que están constituidos primordialmente por tierra y agua tratan de alcanzar su lugar natural de reposo: la Tierra; Los objetos que se componen de aire tratan de subir a su estado natural de reposo: el cielo
 
 ### Matemáticas empleadas
 
@@ -29,7 +31,7 @@ Donde:
 
 ### Aplicaciones
 
-La simulación de la caída libre proporciona información sobre diferentes características, como la altura, velocidad y tiempo durante la caída. Esta información puede ser útil en diversos campos y aplicaciones.
+La caída libre es un fenómeno físico que se presenta cuando un objeto se mueve en una trayectoria  vertical bajo la influencia exclusiva de la gravedad. Este fenómeno se presenta en la vida cotidiana en situaciones como la caída de un balón de nuestras manos, la caída de una hoja o una fruta desde un árbol o la caída de un plato en nuestra cocina
 
 ## Programación
 
@@ -51,6 +53,10 @@ En este proyecto se utilizaron las siguientes herramientas:
 ### Enlace al vídeo con la explicación del código desarrollado
 
 [Link al video explicativo del código](https://drive.google.com/drive/folders/137mXv7L8JpioIiarkFTofUwMEkTBm7uh?usp=sharing)
+
+## Guia de Uso
+
+**[En proceso]**
 
 ## Conclusiones
 
