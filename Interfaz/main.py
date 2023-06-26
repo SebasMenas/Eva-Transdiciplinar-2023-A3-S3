@@ -1,6 +1,7 @@
 import customtkinter as ctk
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 import seaborn as sns
+from matplotlib import pyplot as plt
 import formula_caidalibre as formula
 
 
@@ -11,17 +12,21 @@ ventana_principal.geometry("1000x600")
 ventana_principal.resizable(False, False)
 sns.set(style="darkgrid")
 
-grafico_frame = ctk.CTkFrame(ventana_principal, width=740, height=520)
-grafico_frame.grid(row=0, column=1, pady=20, sticky="ew")
+graph_plot_frame =  ctk.CTkFrame(ventana_principal, width=740, height=520)
+graph_plot_frame.grid(row=0, column=1, pady=20, sticky="ew")
+
+grafico_frame = ctk.CTkFrame(graph_plot_frame, width=640, height=480)
+grafico_frame.grid(row=0, column=1, pady=20, padx=20, sticky="ew")
 
 botones_frame = ctk.CTkFrame(ventana_principal, width=200, height=560)
 botones_frame.grid(row=0, column=0, padx=20, pady=10)
 
-frame_plot_botones = ctk.CTkFrame(ventana_principal, width=740, height=200)
+frame_plot_botones = ctk.CTkFrame(graph_plot_frame, width=740, height=200)
 frame_plot_botones.grid(row=1, column=1, padx=20, pady=10)
 
 lienzo = None
 toolbar = None
+
 def get_g():
     values_g = ['Tierra', 'Luna', 'Saturno', 'Neptuno', 'Júpiter']
     values_n = [9.8, 1.6, 10.44, 11.15, 24.79]
@@ -65,9 +70,10 @@ def graficar(param1):
     lienzo = FigureCanvasTkAgg(fig, master=grafico_frame)
     toolbar = NavigationToolbar2Tk(lienzo)
     toolbar.update()
-    toolbar.pack()
-    toolbar.pack_forget()
-    return fig, lienzo.draw(), lienzo.get_tk_widget().grid(padx=50, pady=20)
+    toolbar.pack_forget()  # Oculta la toolbar sin eliminarla
+    plt.close(fig)
+    return fig, lienzo.draw(), lienzo.get_tk_widget().pack_configure()
+
 
 def plot_botones(toolbar, choice):
     if choice == "home":
@@ -89,14 +95,6 @@ def funcion_principal():
     altura = obtener_valores()
     grafico = graficar(altura)
     return grafico
-
-    # try:
-    #     altura = obtener_valores()
-    #     grafico = graficar(altura)
-    #     return grafico
-
-    # except:
-    #     print("Valor inválido")
 
 
 # Crear botones personalizados para matplotlib
