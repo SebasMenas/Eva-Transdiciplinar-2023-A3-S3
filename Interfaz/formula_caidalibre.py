@@ -1,10 +1,10 @@
 import math
 import matplotlib.pyplot as plt
 
-def caida_libre(altura):
+def caida_libre(altura, gravedad):
     altura_lista = []
     tiempo_lista = []
-    tiempo_final = math.sqrt(2*altura/9.8)
+    tiempo_final = math.sqrt(2*altura/gravedad)
     contador_decimal = 0
     index = 0
 

@@ -22,7 +22,17 @@ frame_plot_botones.grid(row=1, column=1, padx=20, pady=10)
 
 lienzo = None
 toolbar = None
+def get_g():
+    values_g = ['Tierra', 'Luna', 'Saturno', 'Neptuno', 'Júpiter']
+    values_n = [9.8, 1.6, 10.44, 11.15, 24.79]
 
+    g = g_combo.get()
+        
+    for i in values_g, values_n:
+        if i[0] == g:
+
+            return i[1]
+            break
 
 def sbutton_get(value):
     global u_longitud
@@ -51,14 +61,15 @@ def eliminar_grafico():
 def graficar(param1):
     global lienzo
     global toolbar
+    g = get_g()
     eliminar_grafico()
-    fig = formula.caida_libre(param1)
+    fig = formula.caida_libre(param1, g)
     lienzo = FigureCanvasTkAgg(fig, master=grafico_frame)
     toolbar = NavigationToolbar2Tk(lienzo)
     toolbar.update()
     toolbar.pack()
     toolbar.pack_forget()
-    return fig, lienzo.draw(), lienzo.get_tk_widget().pack()
+    return fig, lienzo.draw(), lienzo.get_tk_widget().grid(padx=40, pady=40)
 
 def plot_botones(toolbar, choice):
     if choice == "home":
@@ -109,8 +120,17 @@ txt_1_km_or_m = ctk.CTkSegmentedButton(botones_frame, width=10, height=30, value
 txt_1_km_or_m.grid(row=1, column=1, padx=5, pady=6, sticky="wns")
 txt_1_km_or_m.set("m")
 
-btn_5 = ctk.CTkButton(botones_frame, width=5, height=15, text="Calcular", font=ctk.CTkFont(size=12, weight="bold"), command=funcion_principal)
-btn_5.grid(row=2, column=0, columnspan=2, padx=16, pady=5, sticky='new')
+checkbx_g = ctk.CTkLabel(botones_frame, width=5, height=10, text="Tipo de Gravedad:", font=ctk.CTkFont(size=12, weight="bold"))
+checkbx_g.grid(row=2, column=0, columnspan=2, pady=15, sticky="sew")
+
+g_combo = ctk.CTkComboBox(botones_frame, height=20, width=50, values=['Tierra', 'Luna', 'Saturno', 'Neptuno', 'Júpiter'], corner_radius=15, border_width=0)
+g_combo.grid(row=3, column=0, columnspan=2, padx=10, pady=15, sticky='new')
+g_combo.set('Tierra')
+
+btn_5 = ctk.CTkButton(botones_frame, width=5, height=15, text="Calcular",
+                      font=ctk.CTkFont(size=12, weight="bold"), command=funcion_principal)
+btn_5.grid(row=4, column=0, columnspan=2, padx=16, pady=25, sticky='new')
+
 
 # Loop principal de la Ventana
 ventana_principal.mainloop()
