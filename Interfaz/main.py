@@ -11,8 +11,8 @@ ventana_principal.geometry("1000x600")
 ventana_principal.resizable(False, False)
 sns.set(style="darkgrid")
 
-grafico_frame = ctk.CTkFrame(ventana_principal, width=740, height=560)
-grafico_frame.grid(row=0, column=1, pady=20)
+grafico_frame = ctk.CTkFrame(ventana_principal, width=740, height=520)
+grafico_frame.grid(row=0, column=1, pady=20, sticky="ew")
 
 botones_frame = ctk.CTkFrame(ventana_principal, width=200, height=560)
 botones_frame.grid(row=0, column=0, padx=20, pady=10)
@@ -27,12 +27,10 @@ def get_g():
     values_n = [9.8, 1.6, 10.44, 11.15, 24.79]
 
     g = g_combo.get()
-        
-    for i in values_g, values_n:
-        if i[0] == g:
-
-            return i[1]
-            break
+    
+    for i in range(6):
+        if values_g[i-1] == g:
+            return values_n[i-1]
 
 def sbutton_get(value):
     global u_longitud
@@ -69,7 +67,7 @@ def graficar(param1):
     toolbar.update()
     toolbar.pack()
     toolbar.pack_forget()
-    return fig, lienzo.draw(), lienzo.get_tk_widget().grid(padx=40, pady=40)
+    return fig, lienzo.draw(), lienzo.get_tk_widget().grid(padx=50, pady=20)
 
 def plot_botones(toolbar, choice):
     if choice == "home":
@@ -88,13 +86,17 @@ def plot_botones(toolbar, choice):
         print("Revisar código")
 
 def funcion_principal():
-    try:
-        altura = obtener_valores()
-        grafico = graficar(altura)
-        return grafico
+    altura = obtener_valores()
+    grafico = graficar(altura)
+    return grafico
 
-    except:
-        print("Valor inválido")
+    # try:
+    #     altura = obtener_valores()
+    #     grafico = graficar(altura)
+    #     return grafico
+
+    # except:
+    #     print("Valor inválido")
 
 
 # Crear botones personalizados para matplotlib
@@ -132,5 +134,10 @@ btn_5 = ctk.CTkButton(botones_frame, width=5, height=15, text="Calcular",
 btn_5.grid(row=4, column=0, columnspan=2, padx=16, pady=25, sticky='new')
 
 
+def cerrar_ventana():
+    ventana_principal.quit()
+    ventana_principal.destroy()
+
 # Loop principal de la Ventana
+ventana_principal.protocol("WM_DELETE_WINDOW", cerrar_ventana)
 ventana_principal.mainloop()
