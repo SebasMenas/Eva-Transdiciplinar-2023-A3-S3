@@ -9,7 +9,7 @@ import tkinter as tk
 ventana_principal = ctk.CTk()
 ventana_principal.title("Proyecto")
 ventana_principal.geometry("1200x600")  # Definimos la resolucion de la ventanaventana_principal.resizable(False, False)
-ventana_principal.resizable(False,False)
+ventana_principal.resizable(True,True)
 sns.set(style="darkgrid")
 
 grafico_frame = ctk.CTkFrame(ventana_principal, width=740, height=520)
@@ -17,7 +17,7 @@ grafico_frame.grid(row=0, column=1, pady=20, sticky="ew")
 
 tabla_frame = ctk.CTkFrame(ventana_principal, width=250, height=600)
 tabla_frame.grid(row=0, column=2, padx=20, pady=10)
-tabla_frame.size(10)
+
 
 botones_frame = ctk.CTkFrame(ventana_principal, width=200, height=560)
 botones_frame.grid(row=0, column=0, padx=20, pady=10)
@@ -82,18 +82,9 @@ def graficar(param1):
 
 
 def graficar_tabla(altura, tiempo):
-    print(altura)
-    promedio_indice = int((len(altura) / 39))
-    print(promedio_indice)
-    velocidad = 0
-    indice = 0
-    for i in range(0, 40):
-        if i == 39:
-            tabla_valores.insert("", tk.END, text=i, values=(0,0, 0))
-        tabla_valores.insert("", tk.END, text=i, values=(altura[indice], tiempo[indice], velocidad))
-        velocidad += 2
-        indice += promedio_indice
-
+    print("altura", altura[3])
+    print("tiempo", tiempo[4])
+    
 
 def plot_botones(toolbar, choice):
     if choice == "home":
@@ -118,15 +109,6 @@ def funcion_principal():
     graficar_tabla(grafico[3], grafico[4])
 
     return grafico
-
-    # try:
-    #     altura = obtener_valores()
-    #     grafico = graficar(altura)
-    #     return grafico
-
-    # except:
-    #     print("Valor inválido")
-
 
 # Crear botones personalizados para matplotlib
 btn_home = ctk.CTkButton(frame_plot_botones, width=10, height=10, text="Reset Pos.",
@@ -167,7 +149,7 @@ g_combo.grid(row=3, column=0, columnspan=2, padx=10, pady=15, sticky='new')
 g_combo.set('Tierra')
 
 tabla_valores = ttk.Treeview(tabla_frame, columns=("Altura", "Tiempo", "Velocidad"))
-tabla_valores.configure(height=38)
+tabla_valores.configure(height=10)
 tabla_valores.column("#0", width=0, stretch=tk.NO)
 tabla_valores.column("Altura", width=100, )
 tabla_valores.column("Tiempo", width=50)
