@@ -1,10 +1,10 @@
-import customtkinter as ctk
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
-import seaborn as sns
 from matplotlib import pyplot as plt
 import formula_caidalibre as formula
+import customtkinter as ctk
 from tkinter import ttk
 import tkinter as tk
+import seaborn as sns
 
 # Setup principal de la ventana
 ventana_principal = ctk.CTk()
@@ -14,12 +14,14 @@ ventana_principal.resizable(False, False)
 sns.set(style="darkgrid")
 ctk.set_appearance_mode("light")
 
+#!##########    Ajuste de tema modo claro
 style = ttk.Style()
 style.theme_use("default")
 style.configure("Treeview", background="#ebebeb",foreground="#000", fieldbackground="#cfcfcf", borderwidth=0)
 style.configure("Treeview.Heading", background="#1f6aa5", foreground="#FFF", relief=tk.FLAT)
-
 style.map("Treeview.Heading", background=[('active', '#144870'), ('hover', '#144870')])
+#!##########    Ajuste de tema modo claro
+
 
 graph_plot_frame =  ctk.CTkFrame(ventana_principal, width=740, height=520)
 graph_plot_frame.grid(row=0, column=1, pady=20, sticky="ew")
@@ -41,6 +43,7 @@ lienzo = None
 toolbar = None
 eliminar = False
 u_longitud = ""
+
 def get_g():
     values_g = ['Tierra', 'Luna', 'Saturno', 'Neptuno', 'Júpiter']
     values_n = [9.8, 1.62, 10.44, 11.15, 24.79]
@@ -89,7 +92,6 @@ def graficar(param1):
     plt.close(fig)
     return fig, lienzo.draw(), lienzo.get_tk_widget().pack_configure(),
 
-
 def eliminar_tabla():
     global eliminar
     for item in tabla_valores.get_children():
@@ -109,21 +111,15 @@ def tabla_datos(altura):
 
     eliminar = True
 
-
-
 def plot_botones(toolbar, choice):
     if choice == "home":
         toolbar.home()
-
     elif choice == "movement":
         toolbar.pan()
-
     elif choice == "zoom":
         toolbar.zoom()
-
     elif choice == "save":
         toolbar.save_figure()
-
     else:
         print("Revisar código")
 
@@ -170,8 +166,8 @@ tabla_valores.configure(style="Custom.Treeview")
 tabla_valores.grid(column=0, row=0, pady=17,padx=7,sticky="ns")
 
 
-checkbx_g = ctk.CTkLabel(botones_frame, width=5, height=10, text="Tipo de Gravedad:", font=ctk.CTkFont(size=12, weight="bold"))
-checkbx_g.grid(row=2, column=0, columnspan=2, pady=15, sticky="sew")
+g_combo = ctk.CTkLabel(botones_frame, width=5, height=10, text="Tipo de Gravedad:", font=ctk.CTkFont(size=12, weight="bold"))
+g_combo.grid(row=2, column=0, columnspan=2, pady=15, sticky="sew")
 
 g_combo = ctk.CTkComboBox(botones_frame, height=20, width=50, values=['Tierra', 'Luna', 'Saturno', 'Neptuno', 'Júpiter'], corner_radius=15, border_width=0)
 g_combo.grid(row=3, column=0, columnspan=2, padx=10, pady=15, sticky='new')
