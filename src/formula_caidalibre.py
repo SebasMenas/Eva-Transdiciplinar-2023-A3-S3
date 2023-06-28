@@ -12,7 +12,7 @@ def caida_libre(altura, gravedad,metrica):
 
     while contador_decimal != tiempo_final:
         tiempo_lista.append(round(contador_decimal,2))
-        posicion = altura - (grave/2)*tiempo_lista[index]**2
+        posicion = altura - (gravedad/2)*tiempo_lista[index]**2
         altura_lista.append(posicion)
 
         if contador_decimal >= tiempo_final-0.01:
