@@ -1,7 +1,7 @@
 # Eva-Transdiciplinar-2023-A3-S3
 
 
-<img src="https://github.com/SebasMenas/Eva-Transdiciplinar-2023-A3-S3/blob/main/img/Screenshot%20from%202023-06-26%2002-36-04.png?raw=true">
+<img src="https://github.com/SebasMenas/Eva-Transdiciplinar-2023-A3-S3/blob/main/img/Image_.png">
 
 <div><h2>Descripcion</h2></div>
 
