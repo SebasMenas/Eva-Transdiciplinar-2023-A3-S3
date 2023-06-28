@@ -2,7 +2,7 @@ import math
 import matplotlib.pyplot as plt
 
 def caida_libre(altura, gravedad,metrica):
-    mundos = {"Tierra" : 9.8, "Luna":1.6,"Saturno":10.44,"Neptuno":11.15,"Jupiter":24.79}
+    mundos = {"Tierra" : 9.8, "Luna":1.62,"Saturno":10.44,"Neptuno":11.15,"Jupiter":24.79}
     altura_lista = []
     tiempo_lista = []
     tiempo_final = math.sqrt(2*altura/gravedad)
@@ -12,7 +12,7 @@ def caida_libre(altura, gravedad,metrica):
 
     while contador_decimal != tiempo_final:
         tiempo_lista.append(round(contador_decimal,2))
-        posicion = altura - 4.9*tiempo_lista[index]**2
+        posicion = altura - (grave/2)*tiempo_lista[index]**2
         altura_lista.append(posicion)
 
         if contador_decimal >= tiempo_final-0.01:
@@ -40,8 +40,7 @@ def caida_libre(altura, gravedad,metrica):
 
 
 
-def datos_tabla(altura):
-    gravedad = 9.8
+def datos_tabla(altura, gravedad):
     tiempo_final = math.sqrt(2*altura/gravedad)
     velocidad_final = math.sqrt(2 * gravedad * altura)
     tabla_tiempo = []

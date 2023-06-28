@@ -12,12 +12,20 @@ ventana_principal.title("Proyecto")
 ventana_principal.geometry("1200x600")
 ventana_principal.resizable(False, False)
 sns.set(style="darkgrid")
+ctk.set_appearance_mode("light")
+
+style = ttk.Style()
+style.theme_use("default")
+style.configure("Treeview", background="#ebebeb",foreground="#000", fieldbackground="#cfcfcf", borderwidth=0)
+style.configure("Treeview.Heading", background="#1f6aa5", foreground="#FFF", relief=tk.FLAT)
+
+style.map("Treeview.Heading", background=[('active', '#144870'), ('hover', '#144870')])
 
 graph_plot_frame =  ctk.CTkFrame(ventana_principal, width=740, height=520)
 graph_plot_frame.grid(row=0, column=1, pady=20, sticky="ew")
 
 grafico_frame = ctk.CTkFrame(graph_plot_frame, width=640, height=480)
-grafico_frame.grid(row=0, column=1, pady=20, padx=20, sticky="ew")
+grafico_frame.grid(row=0, column=1, pady=20, padx=20, sticky="sew")
 
 botones_frame = ctk.CTkFrame(ventana_principal, width=200, height=560)
 botones_frame.grid(row=0, column=0, padx=20, pady=10)
@@ -90,13 +98,12 @@ def eliminar_tabla():
 
 def tabla_datos(altura):
     global eliminar
-    datos  = formula.datos_tabla(altura)
+    datos  = formula.datos_tabla(altura, get_g())
     alturas = datos[0]
     tiempos = datos[1]
     velocidades = datos[2]
     if eliminar:
         eliminar_tabla()
-        print("dentro")
     for i in range(0,25):
         tabla_valores.insert("", "end", values=(alturas[i], tiempos[i], velocidades[i]))
 
