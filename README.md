@@ -61,7 +61,7 @@ Descarga aqui -> [Link descarga directa](https://github.com/SebasMenas/Eva-Trans
 
 ## Guia de Uso
 
-[Link al video explicativo de uso ](https://drive.google.com/drive/folders/11qtgiprFzNiIsHwR9dfWJ0Hs24zVCioo?usp=sharing)
+[Link al video explicativo de uso ](https://drive.google.com/drive/folders/137mXv7L8JpioIiarkFTofUwMEkTBm7uh?usp=sharing)
 
 ## Conclusiones
 
