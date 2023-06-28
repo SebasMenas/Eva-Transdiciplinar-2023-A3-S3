@@ -3,12 +3,13 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolb
 import seaborn as sns
 from matplotlib import pyplot as plt
 import formula_caidalibre as formula
-
+from tkinter import ttk
+import tkinter as tk
 
 # Setup principal de la ventana
 ventana_principal = ctk.CTk()
 ventana_principal.title("Proyecto")
-ventana_principal.geometry("1000x600")
+ventana_principal.geometry("1200x600")
 ventana_principal.resizable(False, False)
 sns.set(style="darkgrid")
 
@@ -24,12 +25,17 @@ botones_frame.grid(row=0, column=0, padx=20, pady=10)
 frame_plot_botones = ctk.CTkFrame(graph_plot_frame, width=740, height=200)
 frame_plot_botones.grid(row=1, column=1, padx=20, pady=10)
 
+tabla_frame = ctk.CTkFrame(ventana_principal, width=250, height=600)
+tabla_frame.grid(row=0, column=2, padx=15, pady=20, sticky="ns")
+
+
 lienzo = None
 toolbar = None
-
+eliminar = False
+u_longitud = ""
 def get_g():
     values_g = ['Tierra', 'Luna', 'Saturno', 'Neptuno', 'Júpiter']
-    values_n = [9.8, 1.6, 10.44, 11.15, 24.79]
+    values_n = [9.8, 1.62, 10.44, 11.15, 24.79]
 
     g = g_combo.get()
     
@@ -43,6 +49,7 @@ def sbutton_get(value):
     return u_longitud
 
 def obtener_valores():
+    global u_longitud
     global txt_1
     global txt_1_km_or_m
     u_longitud = txt_1_km_or_m.get()
@@ -66,13 +73,35 @@ def graficar(param1):
     global toolbar
     g = get_g()
     eliminar_grafico()
-    fig = formula.caida_libre(param1, g)
+    fig = formula.caida_libre(param1, g, u_longitud)
     lienzo = FigureCanvasTkAgg(fig, master=grafico_frame)
     toolbar = NavigationToolbar2Tk(lienzo)
     toolbar.update()
     toolbar.pack_forget()  # Oculta la toolbar sin eliminarla
     plt.close(fig)
-    return fig, lienzo.draw(), lienzo.get_tk_widget().pack_configure()
+    return fig, lienzo.draw(), lienzo.get_tk_widget().pack_configure(),
+
+
+def eliminar_tabla():
+    global eliminar
+    for item in tabla_valores.get_children():
+        tabla_valores.delete(item)
+    eliminar = False
+
+def tabla_datos(altura):
+    global eliminar
+    datos  = formula.datos_tabla(altura)
+    alturas = datos[0]
+    tiempos = datos[1]
+    velocidades = datos[2]
+    if eliminar:
+        eliminar_tabla()
+        print("dentro")
+    for i in range(0,25):
+        tabla_valores.insert("", "end", values=(alturas[i], tiempos[i], velocidades[i]))
+
+    eliminar = True
+
 
 
 def plot_botones(toolbar, choice):
@@ -92,8 +121,9 @@ def plot_botones(toolbar, choice):
         print("Revisar código")
 
 def funcion_principal():
-    altura = obtener_valores()
-    grafico = graficar(altura)
+    datos = obtener_valores()
+    grafico = graficar(datos)
+    tabla_datos(datos)
     return grafico
 
 
@@ -119,6 +149,19 @@ txt_1.grid(row=1, column=0, pady=5, padx=5, sticky="ne")
 txt_1_km_or_m = ctk.CTkSegmentedButton(botones_frame, width=10, height=30, values=["Km", "m"], corner_radius=9, border_width=0, command=sbutton_get)
 txt_1_km_or_m.grid(row=1, column=1, padx=5, pady=6, sticky="wns")
 txt_1_km_or_m.set("m")
+
+tabla_valores = ttk.Treeview(tabla_frame, columns=("Altura", "Tiempo", "Velocidad"))
+tabla_valores.configure(height=25)
+tabla_valores.column("#0", width=0, stretch=tk.NO)
+tabla_valores.column("Altura", width=100, )
+tabla_valores.column("Tiempo", width=100)
+tabla_valores.column("Velocidad", width=100)
+tabla_valores.heading("Altura", text="Altura")
+tabla_valores.heading("Tiempo", text="Tiempo")
+tabla_valores.heading("Velocidad", text="Velocidad")
+tabla_valores.configure(style="Custom.Treeview")
+tabla_valores.grid(column=0, row=0, pady=17,padx=7,sticky="ns")
+
 
 checkbx_g = ctk.CTkLabel(botones_frame, width=5, height=10, text="Tipo de Gravedad:", font=ctk.CTkFont(size=12, weight="bold"))
 checkbx_g.grid(row=2, column=0, columnspan=2, pady=15, sticky="sew")
