@@ -64,4 +64,3 @@ En este proyecto se utilizaron las siguientes herramientas:
 ## Conclusiones
 
 **[En proceso]**
->>>>>>> 6c1b23d280aa1a52f439f1f1fbdcbde01065161a
