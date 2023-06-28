@@ -65,7 +65,7 @@ Descarga aqui -> [Link descarga directa](https://github.com/SebasMenas/Eva-Trans
 
 ## Conclusiones
 
-se puede decir que la caída libre es un evento fundamental en muchos ambitos laborales, como la construcción o la aviación,
+Se puede decir que la caída libre es un evento fundamental en muchos ambitos laborales, como la construcción o la aviación,
 en especial en contextos criticos como una accidente aereo o la caida de algun satelite)
 Como muchos sabemos, la informatica tiene como fin ayudar a la solución de problemas, en este caso: saber la caida libre de manera rapida puede optmizar y saber dicha información para solucionar el problema lo antes posible.
 Este trabajo sin duda fue una experiencia esforzada que nos obligo a salir de nuestra zona de confort para poder profundizar más en estos ambitos de la fisica y poder simularlos correctamente.
