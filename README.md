@@ -59,7 +59,9 @@ En este proyecto se utilizaron las siguientes herramientas:
 
 ## Guia de Uso
 
-**[En proceso]**
+[Link al video explicativo del código](https://drive.google.com/drive/folders/1-aK2UYVIqW4FPXhKR21HeUfGcGxrvXhp?usp=sharing)
+
+Descarga aqui -> [Link descarga directa](https://github.com/SebasMenas/Eva-Transdiciplinar-2023-A3-S3/releases/download/Release1.0.0/main_1.0.0.rar)
 
 ## Conclusiones
 
