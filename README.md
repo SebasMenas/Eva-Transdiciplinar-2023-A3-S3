@@ -1,8 +1,5 @@
 # Eva-Transdiciplinar-2023-A3-S3
-<<<<<<< HEAD
-__Branch_02/Kevin__
 
-=======
 
 <img src="https://github.com/SebasMenas/Eva-Transdiciplinar-2023-A3-S3/blob/main/img/Screenshot%20from%202023-06-26%2002-36-04.png?raw=true">
 
