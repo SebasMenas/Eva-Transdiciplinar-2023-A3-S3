@@ -1,6 +1,8 @@
 # Eva-Transdiciplinar-2023-A3-S3
 
-## Descripción
+<img src="https://github.com/SebasMenas/Eva-Transdiciplinar-2023-A3-S3/blob/main/img/Screenshot%20from%202023-06-26%2002-36-04.png?raw=true">
+
+<div><h2>Descripcion</h2></div>
 
 Este proyecto contiene el código fuente de un software que simula un evento de caída libre con diferentes datos de simulación. Proporciona una forma sencilla de realizar simulaciones y obtener información relacionada con la caída libre.
 
