@@ -50,7 +50,9 @@ En este proyecto se utilizaron las siguientes herramientas:
 - [Seaborn](https://github.com/mwaskom/seaborn): Es una biblioteca de visualización de datos en Python que se basa en Matplotlib. Proporciona una interfaz de alto nivel y estilizada para crear visualizaciones estadísticas atractivas y efectivas.
 ### Guía de instalación
 
-**[En proceso]**
+[Link al video explicativo del instalacion](https://drive.google.com/drive/folders/1-aK2UYVIqW4FPXhKR21HeUfGcGxrvXhp?usp=sharing)
+
+Descarga aqui -> [Link descarga directa](https://github.com/SebasMenas/Eva-Transdiciplinar-2023-A3-S3/releases/download/Release1.0.0/main_1.0.0.rar)
 
 
 ### Enlace al vídeo con la explicación del código desarrollado
@@ -59,9 +61,7 @@ En este proyecto se utilizaron las siguientes herramientas:
 
 ## Guia de Uso
 
-[Link al video explicativo del código](https://drive.google.com/drive/folders/1-aK2UYVIqW4FPXhKR21HeUfGcGxrvXhp?usp=sharing)
-
-Descarga aqui -> [Link descarga directa](https://github.com/SebasMenas/Eva-Transdiciplinar-2023-A3-S3/releases/download/Release1.0.0/main_1.0.0.rar)
+[Link al video explicativo de uso ](https://drive.google.com/drive/folders/1-aK2UYVIqW4FPXhKR21HeUfGcGxrvXhp?usp=sharing)
 
 ## Conclusiones
 
