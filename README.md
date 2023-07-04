@@ -63,6 +63,11 @@ Descarga aqui -> [Link descarga directa](https://github.com/SebasMenas/Eva-Trans
 
 [Link al video explicativo de uso ](https://drive.google.com/drive/folders/11yUVXQoSptfFsn8h4a3dnqnyeScWudRZ?usp=sharing)
 
+# Explicacion del Fenómeno
+
+
+[Link al video explicativo de Fenómeno Fisico ](https://www.youtube.com/watch?v=UK2lZzrM0f8)
+
 ## Conclusiones
 
 Se puede decir que la caída libre es un evento fundamental en muchos ambitos laborales, como la construcción o la aviación,
