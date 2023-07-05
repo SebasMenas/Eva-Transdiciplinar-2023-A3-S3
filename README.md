@@ -66,7 +66,7 @@ Descarga aqui -> [Link descarga directa](https://github.com/SebasMenas/Eva-Trans
 # Explicacion del Fenómeno
 
 
-[Link al video explicativo de Fenómeno Fisico ](https://www.youtube.com/watch?v=UK2lZzrM0f8)
+[Link al video explicativo de Fenómeno Fisico ](https://youtu.be/n1e99GDJU50)
 
 ## Conclusiones
 
